@@ -812,6 +812,12 @@ footer i {
             width: 100%;
             align-items: center;
             justify-content: center;
+            text-align: center;
+        }
+
+        .cards-sesion h3 {
+            text-align: center;
+            margin-left: 0px;
         }
 
         .cards-sesion hr {
@@ -828,7 +834,7 @@ footer i {
         footer {
             flex-direction: column;
             gap: 15px;
-            width: ;
+            
         }
 
         .direitos {
