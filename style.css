@@ -257,6 +257,7 @@ button i {
     display: flex;
     flex-direction: row;
     background-color: #fcefe9;
+    overflow-x: hidden;
 }
 
 .sobre-mim-info{
