@@ -11,6 +11,7 @@ body{
     margin: 0;
     padding: 0;
     font-family: "Montserrat", sans-serif;
+    overflow-x: hidden;
 }
 
 section {
@@ -255,6 +256,7 @@ button i {
 .sobre-mim {
     display: flex;
     flex-direction: row;
+    background-color: #fcefe9;
 }
 
 .sobre-mim-info{
@@ -263,7 +265,7 @@ button i {
     flex: 1;
     justify-content: space-between;
     
-    background-color: #fcefe9;
+    
 }
 
 .sobre-mim-info-text {
@@ -389,6 +391,7 @@ button i {
     justify-content: center;
     background-color: #fff;  
     gap: 10vw;
+    overflow-x: hidden;
 }
 
 .agenda-sesion {
@@ -569,6 +572,32 @@ footer i {
 }
 
 
+/* ANIMAÇÕES */
+
+.animar-esquerda {
+    transform: translateX(-100px);
+    opacity: 0;
+    transition: 1s;
+}
+
+.animar-direita {
+    transform: translateX(100px);
+    opacity: 0;
+    transition: 1s;
+}
+
+.animar-baixo {
+    transform: translateY(100px);
+    opacity: 0;
+    transition: 1s;
+}
+
+.aparecer {
+    transform: translate(0);
+    opacity: 1;
+}
+
+
 
 /* RESPONSIVIDADE */
 
@@ -582,6 +611,8 @@ footer i {
 
     .hamburguer {
         display: block;
+        margin-right: 5vw;
+        z-index: 10000;
     }
 
     .uls-nav {
@@ -592,9 +623,41 @@ footer i {
         height: 35px;
     }
 
+    .logo-nav {
+    position: relative;
+    z-index: 10000;
+}
+
     nav .botaoAgendar {
         display: none;
     }
+
+.uls-nav.menu-aberto {
+    display: block;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-color: #fbf0ea;
+    z-index: 9999;
+}
+
+
+
+.uls-nav.menu-aberto ul {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.uls-nav.menu-aberto ul li a {
+    font-size: 18px;
+}
+
 
     /* HERO */
 
@@ -651,6 +714,7 @@ footer i {
         .servicios {
             align-items: center;
             text-align: center;
+            flex-direction: column;
         }
 
         .ajuda-texto {
@@ -663,13 +727,17 @@ footer i {
         }
 
         .container-cards-serviços {
-            flex-wrap: wrap;
+            align-items: center;
+            flex-direction: column;
             justify-content: center;
             gap: 20px;
+            margin-bottom: 20px;
         }
 
         .card-servico {
-            width: 45%;
+            width: 100%;
+            margin-bottom: 0px;
+            
         }
 
         
@@ -825,6 +893,10 @@ footer i {
             margin: 05px auto 30px auto;
             justify-content: center;
             text-align: center;
+        }
+
+        .button-agenda-2 {
+            margin-right: 0px;
         }
 
         /* FOOTER */

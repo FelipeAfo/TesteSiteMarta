@@ -73,3 +73,37 @@ pergunta4.onclick = function(){
     }
 }
 
+let hamburguer = document.getElementById("hamburguer")
+let menu = document.getElementById("menu")
+
+hamburguer.onclick = function(){
+
+    let iconeHamburguer = hamburguer.querySelector("i")
+
+    if(menu.classList.contains("menu-aberto")){
+        menu.classList.remove("menu-aberto")
+        iconeHamburguer.classList.remove("fa-xmark")
+        iconeHamburguer.classList.add("fa-bars")
+
+    } else {
+        menu.classList.add("menu-aberto")
+        iconeHamburguer.classList.remove("fa-bars")
+        iconeHamburguer.classList.add("fa-xmark")
+    }
+}
+
+let cards = document.querySelectorAll(".animar-esquerda, .animar-direita, .animar-baixo")
+
+let observador = new IntersectionObserver(function(elementos){
+
+    elementos.forEach(function(elemento){
+        if(elemento.isIntersecting){
+    elemento.target.classList.add("aparecer")
+}
+    })
+
+})
+
+cards.forEach(function(card){
+    observador.observe(card)
+})
